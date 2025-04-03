@@ -1,0 +1,10 @@
+# trigger-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: trigger-role
+  namespace: default
+rules:
+  - apiGroups: ["triggers.tekton.dev"]
+    resources: ["eventlisteners", "triggers", "triggerbindings", "triggertemplates", "interceptors"]
+    verbs: ["get", "list", "watch"]
